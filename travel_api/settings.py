@@ -37,11 +37,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
     'core',
     'rest_framework',
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -102,6 +104,14 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+#CORS_ORIGIN_WHITELIST = [
+#    "https://ptavaresh.github.io/exploringtheworld/",
+#    "http://localhost:8080",
+#    "http://127.0.0.1:8000"
+#]
+# CORS Config
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ALLOW_CREDENTIALS = False
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
